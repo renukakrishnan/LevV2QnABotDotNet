@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+@*
+    Comments
+*@
+@model IEnumerable<LexV2QnABotApp.Models.MessageViewModel>
+@{
+    ViewData["Title"] = ".NET Lex ChatBot";
+}
+
+
+    <section style="background-color: #CDC4F9;">
+        <div class="container py-3 ">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="py-2 px-4 border-bottom d-none d-lg-block">
+						<div class="d-flex align-items-center py-1">
+							<div class="position-relative">
+							<img src="~/images/chatbot.jpg" class="rounded-circle mr-1" alt="Help Desk Bot" width="40" height="40">
+							</div>
+							<div class="flex-grow-1 pl-3">
+								<strong>Help Desk Bot</strong>
+							</div>
+							<div>
+								<button class="btn btn-light border btn-sm px-2">Start Over</button>
+							</div>
+						</div>
+					</div>
+                    <div class="card" id="chat3" style="border-radius: 15px;">
+                        <div class="card-body">
+                                    <div class="pt-3 pe-3">
+
+                                        @foreach (var ChatMsg in Model)
+                                        {
+                                            @if (ChatMsg.MessageType == "BotMessage")
+                                            {
+                                                <div class="d-flex flex-row justify-content-start">
+                                                    <img style="width: 45px; height: 100%;" src="~/images/chatbot.jpg">
+                                                    <div>
+                                                        
+                                                        @if (ChatMsg.ResponseMessageType == "ImageResponseCard")
+                                                        {
+                                                            <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">
+                                                                @ChatMsg.ResponseCardViewModel.Title
+                                                    <div class="d-grid gap-2 col-8 mx-auto  bg-secondary">
+                                                                @foreach (var msg in ChatMsg.ResponseCardViewModel.reponseCardMessages)
+                                                                {
+                                                            <button id="btn1" class="btn btn-secondary btn-sm" value="@msg" onclick="SubmitFunction(this)">@msg</button>
+                                                                }
+                                                                </div>
+                                                            </p>
+                                                        }
+                                                        else
+                                                        {
+                                                            <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">
+                                                                @ChatMsg.ChatMessage
+                                                            </p>
+                                                        }
+                                                        <p class="small ms-3 mb-3 rounded-3 text-muted float-end">@DateTime.Now.ToString("MMM dd hh:mm")</p>
+                                                    </div>
+                                                </div>
+                                            }
+                                            @if (ChatMsg.MessageType == "UserMessage")
+                                            {
+                                                <div class="d-flex flex-row justify-content-end">
+                                                    <div>
+                                                        <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-primary">
+                                                            @ChatMsg.ChatMessage
+                                                        </p>
+                                                        <p class="small me-3 mb-3 rounded-3 text-muted">@DateTime.Now.ToString("MMM dd hh:mm")</p>
+                                                    </div>
+                                                    <img style="width: 45px; height: 100%;">
+                                                </div>
+                                            }
+                                        }
+
+                                    </div>
+                                    
+                                    <div class="flex-grow-0 py-3 px-4 border-top">
+						                @using (Html.BeginForm("GetChatMessage", "ChatBot", FormMethod.Post))
+						                {
+					
+							                <div class="input-group">
+
+                                                <input type="text" class="form-control" placeholder="Type your message" id="userMessage" name="userMessage">
+								                <button class="btn btn-primary" type="submit">Send</button>
+							                </div>
+						                }
+					                </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    @{
+        <script type="text/javascript">
+            var chatDiv = document.getElementById("chat3");
+            chatDiv.scrollTop = chatDiv.scrollHeight;
+
+
+
+            function SubmitFunction(element) {
+                $("#userMessage").val($(element).val());
+                $("form").submit();
+            }
+        </script>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+
+        var htmlAttributes = new Dictionary<string, object>();
+        htmlAttributes.Add("class", "form-inline");
+    }
+   

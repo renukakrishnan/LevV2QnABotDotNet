@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
+    <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
+    <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\renukakn\.nuget\packages\;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages</NuGetPackageFolders>
+    <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.4.0</NuGetToolVersion>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <SourceRoot Include="C:\Users\renukakn\.nuget\packages\" />
+    <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
+  </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)microsoft.visualstudio.azure.containers.tools.targets\1.17.0\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props" Condition="Exists('$(NuGetPackageRoot)microsoft.visualstudio.azure.containers.tools.targets\1.17.0\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props')" />
+  </ImportGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgMessagePackAnalyzer Condition=" '$(PkgMessagePackAnalyzer)' == '' ">C:\Users\renukakn\.nuget\packages\messagepackanalyzer\2.1.152</PkgMessagePackAnalyzer>
+    <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\renukakn\.nuget\packages\microsoft.codeanalysis.analyzers\3.3.2</PkgMicrosoft_CodeAnalysis_Analyzers>
+    <PkgMicrosoft_CodeAnalysis_AnalyzerUtilities Condition=" '$(PkgMicrosoft_CodeAnalysis_AnalyzerUtilities)' == '' ">C:\Users\renukakn\.nuget\packages\microsoft.codeanalysis.analyzerutilities\3.3.0</PkgMicrosoft_CodeAnalysis_AnalyzerUtilities>
+    <PkgMicrosoft_VisualStudio_Azure_Containers_Tools_Targets Condition=" '$(PkgMicrosoft_VisualStudio_Azure_Containers_Tools_Targets)' == '' ">C:\Users\renukakn\.nuget\packages\microsoft.visualstudio.azure.containers.tools.targets\1.17.0</PkgMicrosoft_VisualStudio_Azure_Containers_Tools_Targets>
+    <PkgAWSSDK_Core Condition=" '$(PkgAWSSDK_Core)' == '' ">C:\Users\renukakn\.nuget\packages\awssdk.core\3.7.101</PkgAWSSDK_Core>
+    <PkgAWSSDK_SecurityToken Condition=" '$(PkgAWSSDK_SecurityToken)' == '' ">C:\Users\renukakn\.nuget\packages\awssdk.securitytoken\3.7.100.28</PkgAWSSDK_SecurityToken>
+    <PkgAWSSDK_LexRuntimeV2 Condition=" '$(PkgAWSSDK_LexRuntimeV2)' == '' ">C:\Users\renukakn\.nuget\packages\awssdk.lexruntimev2\3.7.100.28</PkgAWSSDK_LexRuntimeV2>
+    <PkgAWSSDK_LexModelsV2 Condition=" '$(PkgAWSSDK_LexModelsV2)' == '' ">C:\Users\renukakn\.nuget\packages\awssdk.lexmodelsv2\3.7.101.18</PkgAWSSDK_LexModelsV2>
+    <PkgAWSSDK_LexModelBuildingService Condition=" '$(PkgAWSSDK_LexModelBuildingService)' == '' ">C:\Users\renukakn\.nuget\packages\awssdk.lexmodelbuildingservice\3.7.100.28</PkgAWSSDK_LexModelBuildingService>
+    <PkgAWSSDK_Lex Condition=" '$(PkgAWSSDK_Lex)' == '' ">C:\Users\renukakn\.nuget\packages\awssdk.lex\3.7.100.28</PkgAWSSDK_Lex>
+    <PkgAWSSDK_CognitoIdentityProvider Condition=" '$(PkgAWSSDK_CognitoIdentityProvider)' == '' ">C:\Users\renukakn\.nuget\packages\awssdk.cognitoidentityprovider\3.7.101.28</PkgAWSSDK_CognitoIdentityProvider>
+    <PkgAWSSDK_CognitoIdentity Condition=" '$(PkgAWSSDK_CognitoIdentity)' == '' ">C:\Users\renukakn\.nuget\packages\awssdk.cognitoidentity\3.7.100.28</PkgAWSSDK_CognitoIdentity>
+  </PropertyGroup>
+</Project>
